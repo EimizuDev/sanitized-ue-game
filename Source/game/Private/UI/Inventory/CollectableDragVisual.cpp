@@ -1,9 +1,10 @@
 #include "UI/Inventory/CollectableDragVisual.h"
 #include "Components/CanvasPanelSlot.h"
+#include "Data/Inventory/TileHolderData.h"
 
 void UCollectableDragVisual::Init()
 {
-	const FVector2D Size{ GetDimesions().X * /*size*/, GetDimesions().Y * /*size*/ };
+	const FVector2D Size{ GetDimesions().X * TileHolderDataLogic::TileSize, GetDimesions().Y * TileHolderDataLogic::TileSize };
 	
 	BackgroundSizeBox->SetWidthOverride(Size.X);
 	BackgroundSizeBox->SetHeightOverride(Size.Y);
