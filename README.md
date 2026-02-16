@@ -25,4 +25,7 @@ The full working source is private and available only for technical review on re
 - Object-Oriented Programming (OOP)
 - Network replication for gameplay systems
 
-**This project is licensed under the MIT License. See the `LICENSE` file for details.** The MIT license applies only to the code and assets included in this repository.
+## Licensing
+
+This repository is intended for **portfolio review and educational purposes only**.  
+#### See the `LICENSE` file for details.
