@@ -12,8 +12,8 @@ It is intentionally trimmed for public view. The full working source is private 
 
 ### Excluded / Private
 
-- A complete inventory system
-- Certain assets and code I don't want to share
+- All assets (content folder)
+- Most code I didn't want to share
 
 ## What I learned
 
