@@ -1,14 +1,17 @@
-# Sanitized Game - Unreal Engine C++
+# Unreal Engine game - sanitized code snapshot
 
-**Status:** archived
+**Status:** archived - sanitized snapshot for code review only 
 
-**Maintenance:** may be continued in the future.
+**Maintenance:** may be continued in the future
 
 ## Overview
 
-This repository is a **sanitized version** of my Unreal Engine C++ game I was working on in 2025.
+This repository contains *selected source code* from my Unreal Engine C++ project I was working on in 2025.
 
-It is intentionally trimmed for public view. The full working source is private and available only for technical review on request to certain people.
+The full working source is private and available only for technical review on request to certain people.
+
+> [!WARNING]
+> This is not runnable and the code will not compile because a lot of stuff was removed.
 
 ### Excluded / Private
 
