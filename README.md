@@ -16,7 +16,13 @@ The full working source is private and available only for technical review on re
 ### Excluded / Private
 
 - All assets (content folder)
+- Configurations (configs folder)
 - Most code I didn't want to share
+
+## Features
+
+- Movement system
+- Complex inventory system (some stuff is removed)
 
 ## What I learned
 

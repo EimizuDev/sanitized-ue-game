@@ -1,22 +1,20 @@
 #include "Data/Inventory/TileHolderData.h"
 
-void TileHolderDataLogic::BuildGridLines(FTileHolderData& TileHolderData)
+void TileHolderDataLogic::BuildGridLines(FTileHolderData& InOutTileHolderData)
 {
-	const float LocalTileSize = private ? private : TileSize;
-
 	// Creates verticle lines
-	for (int8 i{ 0 }; i <= TileHolderData.TileHolderBounds.Columns; i++)
+	for (int8 i = 0; i <= InOutTileHolderData.TileHolderBounds.Columns; i++)
 	{
-		const float X = i * LocalTileSize;
+		const float X = i * TileSize;
 
-		TileHolderData.Lines.Add(FLine(FVector2D(X, 0.f), FVector2D(X, (TileHolderData.TileHolderBounds.Rows * LocalTileSize) + 2.f)));
+		InOutTileHolderData.Lines.Add({ {X, 0.f}, {X, (InOutTileHolderData.TileHolderBounds.Rows * TileSize) + 1.5f} });
 	}
 
 	// Creates horizontal lines
-	for (int8 i{ 0 }; i <= TileHolderData.TileHolderBounds.Rows; i++)
+	for (int8 i = 0; i <= InOutTileHolderData.TileHolderBounds.Rows; i++)
 	{
-		const float Y = i * LocalTileSize;
+		const float Y = i * TileSize;
 
-		TileHolderData.Lines.Add(FLine(FVector2D(0.f, Y), FVector2D((TileHolderData.TileHolderBounds.Columns * LocalTileSize) + 2.f, Y)));
+		InOutTileHolderData.Lines.Add({ {0.f, Y}, {(InOutTileHolderData.TileHolderBounds.Columns * TileSize) + 1.5f, Y} });
 	}
 }

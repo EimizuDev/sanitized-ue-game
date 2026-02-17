@@ -2,20 +2,23 @@
 #include "Data/Inventory/TileHolderData.h"
 #include "Net/UnrealNetwork.h"
 
-void UInventoryContainer::CreateContainer(TArray<FTileHolder> InTileHolders, bool private)
+void UInventoryContainer::CreateContainer(const TArray<FTileHolder>& InTileHolders, FBorderBounds InBorderBounds)
 {
-	for (const FTileHolder& TileHolder : InTileHolders)
+	BorderBounds = InBorderBounds;
+
+	for (const FTileHolder TileHolder : InTileHolders)
 	{
 		FTileHolderData TileHolderData;
 
 		TileHolderData.Tiles.SetNum(TileHolder.Rows * TileHolder.Columns);
 		TileHolderData.TileHolderBounds = TileHolder;
-		private;
 		TileHolderDataLogic::BuildGridLines(TileHolderData);
 
 		TileHolders.Add(TileHolderData);
 	}
 }
+
+private
 
 void UInventoryContainer::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
@@ -23,7 +26,8 @@ void UInventoryContainer::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	
 	DOREPLIFETIME(UInventoryContainer, TileHolders);
 	DOREPLIFETIME(UInventoryContainer, bIsReplicated);
-	DOREPLIFETIME(UInventoryContainer, private);
+	private
+	DOREPLIFETIME(UInventoryContainer, BorderBounds);
 }
 
 bool UInventoryContainer::IsSupportedForNetworking() const

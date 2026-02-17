@@ -3,28 +3,25 @@
 class UContainerWidget;
 
 #include "Blueprint/UserWidget.h"
-#include "Components/CanvasPanel.h"
 #include "TabMenuWidget.generated.h"
 
+/**
+* UI representing the tab menu.
+*/
 UCLASS()
 class PRIVATE_API UTabMenuWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
 public:
+	/**
+	* Ground container widget.
+	*/
 	UPROPERTY(meta = (BindWidget))
-	private;
+	TObjectPtr<UContainerWidget> GroundContainerWidget;
 
-	UPROPERTY(meta = (BindWidget))
-	private;
-
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UContainerWidget> GroundContainer;
-
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UCanvasPanel> CanvasPanel;
+	private
 
 protected:
 	virtual FReply NativeOnMouseButtonDown(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;
-	virtual FReply NativeOnMouseButtonUp(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;
 };
