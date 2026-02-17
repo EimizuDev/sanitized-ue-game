@@ -11,7 +11,7 @@ This repository contains *selected source code* from my Unreal Engine C++ projec
 The full working source is private and available only for technical review on request to certain people.
 
 > [!WARNING]
-> This is not runnable and the code will not compile because a lot of stuff was removed.
+> This is not runnable and the code will not compile because a lot of stuff was removed and replaced with words.
 
 ### Excluded / Private
 
